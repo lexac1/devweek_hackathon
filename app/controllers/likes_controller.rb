@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
 	def index
-		@user = User.first
+		@user = current_user
 		@likes = @user.likes 
 	end
 
