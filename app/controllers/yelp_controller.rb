@@ -1,5 +1,5 @@
 class YelpController < ApplicationController
   def index
-    #code
+    @resturaunts = search_by_zip("94552")
   end
 end

@@ -51,6 +51,15 @@ module RestaurantsHelper
         "latitude" => restaurant['coordinates']['latitude']
       }
     end
+
+    # Map a new restaurant to the resturaunt active record with the following rows.
+    # t.string :name
+    # t.string :phone_number
+    # t.string :address_1
+    # t.string :address_2
+    # t.string :zip_code
+    # t.string :city
+    # t.string :state
   end
 
 end
