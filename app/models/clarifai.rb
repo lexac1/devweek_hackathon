@@ -43,14 +43,16 @@ class Clarifai
     app_secret = ENV['CLARIFAI_APP_SECRET']
     clarifai = Clarifai.new(app_id, app_secret)
     clarifai.set_token
-    @parsed_data = clarifai.predict_by_url(url="http://orig15.deviantart.net/3ddb/f/2014/341/5/b/6g3a4418_by_blackpepperphotos  -d890oo6.jpg")
+    @parsed_data = clarifai.predict_by_url(url="http://orig15.deviantart.net/3ddb/f/2014/341/5/b/6g3a4418_by_blackpepperphotos-d890oo6.jpg")
     @results = @parsed_data['outputs'][0]['data']['concepts']
 
     @filtered_images = []
     5.times do |idx|
       @filtered_images << @results[idx]['name']
+      @filtered_images.each do |result|
+ 
+      end
     end
-    return @filtered_images
   end
 
   private
@@ -61,5 +63,3 @@ class Clarifai
     }
   end
 end
-
-
