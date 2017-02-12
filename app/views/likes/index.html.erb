@@ -1,2 +1,4 @@
-<%= @likes.first.picture.restaurant_name %>
-<img src=<%=@likes.first.picture.pic_url%>>
+<% @likes.each do |like| %>
+<img src=<%=like.picture.pic_url%>>
+<%= like.picture.restaurant_name %><br>
+<% end %>
