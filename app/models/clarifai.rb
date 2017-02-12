@@ -39,20 +39,21 @@ class Clarifai
   end
 
   def self.filter_results
+    image_url = "http://orig15.deviantart.net/3ddb/f/2014/341/5/b/6g3a4418_by_blackpepperphotos-d890oo6.jpg"
     app_id = ENV['CLARIFAI_APP_ID']
     app_secret = ENV['CLARIFAI_APP_SECRET']
     clarifai = Clarifai.new(app_id, app_secret)
     clarifai.set_token
-    @parsed_data = clarifai.predict_by_url(url="http://orig15.deviantart.net/3ddb/f/2014/341/5/b/6g3a4418_by_blackpepperphotos-d890oo6.jpg")
+    @parsed_data = clarifai.predict_by_url(url=image_url)
     @results = @parsed_data['outputs'][0]['data']['concepts']
 
     @filtered_images = []
-    5.times do |idx|
-      @filtered_images << @results[idx]['name']
-      @filtered_images.each do |result|
- 
+    10.times do |idx|
+      if @results[idx]['name'] != "person" || @results[idx]['name'] != "people"
+        @filtered_images << @results[idx]['name']
       end
     end
+    @filtered_images
   end
 
   private
