@@ -36,7 +36,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'rb-readline' 
+gem 'rb-readline'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -57,9 +57,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'awesome_print'
 gem 'binding_of_caller'
-gem 'rb-readline'
 gem 'google_places'
 gem 'dotenv-rails'
 gem 'bcrypt'
 # gem 'yelp'
 gem 'httparty'
+gem 'erubis'
+gem 'responders'
