@@ -52,8 +52,10 @@ module RestaurantsHelper
       }
     end
 
-    # Map a new restaurant to the resturaunt active record with the following rows.
-    # t.string :name
+    # Map a new picture to the resturaunt active record with the following rows.
+    # t.string :pic_url
+    # t.string :food_category
+    # t.string :restaurant_name
     # t.string :phone_number
     # t.string :address_1
     # t.string :address_2
